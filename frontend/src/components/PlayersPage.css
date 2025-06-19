@@ -1,0 +1,66 @@
+.players-page {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.players-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.players-page h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.player-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.player-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #38003c;
+  font-size: 1.2rem;
+}
+
+.player-info .position {
+  color: #00ff87;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+
+.player-info .team {
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+.loading,
+.error {
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+.error {
+  color: #ff6b6b;
+}

@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.api-data {
+  margin-top: 20px;
+  max-width: 800px;
+}
+
+.api-data h2 {
+  color: #61dafb;
+  margin-bottom: 15px;
+}
+
+.api-data pre {
+  background-color: #1e1e1e;
+  color: #f8f8f2;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
