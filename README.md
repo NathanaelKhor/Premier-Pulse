@@ -46,7 +46,7 @@ Premier-Pulse/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/Premier-Pulse.git
+   git clone https://github.com/NathanaelKhor/Premier-Pulse.git
    cd Premier-Pulse
    ```
 
