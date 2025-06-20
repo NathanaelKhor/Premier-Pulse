@@ -95,6 +95,12 @@
   margin-top: 2rem;
 }
 
+.player-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .player-card {
   background: white;
   border-radius: 12px;
@@ -102,6 +108,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-left: 4px solid #00ff87;
+  cursor: pointer;
 }
 
 .player-card:hover {
@@ -112,12 +119,46 @@
 .player-info h3 {
   color: #37003c;
   font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .player-info p {
   color: #666;
   margin: 0.3rem 0;
+}
+
+/* Enhanced Badge Container for HomePage */
+.player-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.player-badges span {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.player-info .position {
+  background: linear-gradient(135deg, #37003c, #00ff87);
+  color: white;
+}
+
+.player-info .team {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.player-info .nation {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
 }
 
 /* Features Section */

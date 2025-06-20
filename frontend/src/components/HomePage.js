@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getCountryName } from "../utils/countryUtils";
 import "./HomePage.css";
 
 function HomePage() {
@@ -59,13 +60,28 @@ function HomePage() {
             <div className="players-grid">
               {players.length > 0 ? (
                 players.map((player, index) => (
-                  <div key={index} className="player-card">
-                    <div className="player-info">
-                      <h3>{player.name || `Player ${index + 1}`}</h3>
-                      <p>{player.pos || "Position not specified"}</p>
-                      <p>{player.team || "Team not specified"}</p>
+                  <Link
+                    key={index}
+                    to={`/player/${encodeURIComponent(player.name)}`}
+                    className="player-card-link"
+                  >
+                    <div className="player-card">
+                      <div className="player-info">
+                        <h3>{player.name || `Player ${index + 1}`}</h3>
+                        <div className="player-badges">
+                          <span className="position">
+                            {player.pos || "Unknown Position"}
+                          </span>
+                          <span className="team">
+                            {player.team || "Unknown Team"}
+                          </span>
+                          <span className="nation">
+                            {getCountryName(player.nation) || "Unknown Country"}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))
               ) : (
                 <p>No players found</p>
