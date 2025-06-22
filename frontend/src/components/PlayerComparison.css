@@ -1,0 +1,236 @@
+.player-comparison {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.player-comparison h2 {
+  color: #38003c;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.player-comparison h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Player Search */
+.player-search {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.comparison-search {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.comparison-search:focus {
+  outline: none;
+  border-color: #38003c;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-result {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.search-result:hover {
+  background: #f8f9fa;
+}
+
+.search-result .player-name {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.search-result .player-team {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Selected Players */
+.selected-players {
+  margin-bottom: 2rem;
+}
+
+.player-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.player-chip {
+  background: linear-gradient(135deg, #38003c, #4a0049);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.player-chip button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+}
+
+.player-chip button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Stat Selection */
+.stat-selection {
+  margin-bottom: 2rem;
+}
+
+.stat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stat-chip {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  color: #666;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.stat-chip:hover {
+  border-color: #38003c;
+  color: #38003c;
+}
+
+.stat-chip.active {
+  background: #38003c;
+  border-color: #38003c;
+  color: white;
+}
+
+/* Comparison Results */
+.comparison-results {
+  margin-top: 2rem;
+}
+
+.comparison-table {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, #38003c, #4a0049);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.comparison-table th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.comparison-table th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.comparison-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.comparison-table tr:hover td {
+  background: #f8f9fa;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.player-name-cell {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.stat-cell {
+  text-align: center;
+  font-weight: 500;
+  color: #38003c;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .player-comparison {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .player-chips {
+    flex-direction: column;
+  }
+
+  .stat-chips {
+    justify-content: center;
+  }
+
+  .comparison-table {
+    font-size: 0.8rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.5rem;
+  }
+}

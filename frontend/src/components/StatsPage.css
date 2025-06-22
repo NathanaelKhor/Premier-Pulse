@@ -103,3 +103,242 @@
 .error {
   color: #ff6b6b;
 }
+
+/* New Chart Styles */
+.charts-section {
+  margin-bottom: 4rem;
+}
+
+.charts-section h2 {
+  text-align: center;
+  color: #38003c;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(55, 0, 60, 0.1),
+    rgba(0, 255, 133, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.chart-container:hover::before {
+  opacity: 1;
+}
+
+/* Tab Navigation Styles */
+.stats-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  color: #666;
+}
+
+.tab:hover {
+  color: #38003c;
+  background: rgba(55, 0, 60, 0.05);
+}
+
+.tab.active {
+  color: #38003c;
+  border-bottom-color: #38003c;
+  background: rgba(55, 0, 60, 0.1);
+}
+
+/* Insights Section */
+.insights-section {
+  margin-bottom: 4rem;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.insight-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #38003c;
+}
+
+.insight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.insight-card h3 {
+  color: #38003c;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.insight-card p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.insight-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.insight-content strong {
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.insight-content span {
+  color: #00ff87;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mini-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mini-stat:last-child {
+  border-bottom: none;
+}
+
+.mini-stat span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.mini-stat strong {
+  color: #38003c;
+  font-weight: 700;
+}
+
+/* Responsive adjustments for charts */
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .chart-container {
+    padding: 1rem;
+    min-height: 300px;
+  }
+
+  .charts-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .stats-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .insight-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    min-height: 250px;
+    padding: 0.75rem;
+  }
+}
+
+/* Loading and Error States Enhancement */
+.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+  height: 1.5rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.error {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
